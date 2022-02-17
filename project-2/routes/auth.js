@@ -14,6 +14,12 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+/* router.get('/profile', (req, res,next) => res.render('profile/profile')); */
+
+router.get('/profile', (req, res,next) => {
+  res.render('profile/profile', { userInSession: req.session.currentUser });
+});
+
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
@@ -68,7 +74,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/auth/profile");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {

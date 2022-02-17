@@ -1,0 +1,100 @@
+
+    <h1>Questionario</h1>
+	<script type="text/javascript">
+		let maxPerguntas = 5;
+		function aoCarregar(){
+			escondeTudo();
+			document.getElementById('pergunta1').style.display = "block";
+			document.getElementById('perguntaActual').value = 1;
+		}
+		function escondeTudo(){
+			for( i = 1; i <= maxPerguntas; i++){
+			document.getElementById('pergunta'+i).style.display = "none";
+			}
+		}
+		function perguntaAnterior(){
+			actual = document.getElementById('perguntaActual').value;
+			if(actual > 1){
+				escondeTudo();
+				document.getElementById('perguntaActual').value--;
+				document.getElementById('pergunta'+document.getElementById('perguntaActual').value).style.display = "block";
+			}
+		}
+
+		function proximaPergunta(){
+			actual = document.getElementById('perguntaActual').value;
+			if(actual >= 1 && actual < maxPerguntas){
+				escondeTudo();
+				document.getElementById('perguntaActual').value++;
+				document.getElementById('pergunta'+document.getElementById('perguntaActual').value).style.display = "block";
+			}
+		}
+
+       function getOptions() {
+  let x = document.getElementById("mySelect");
+  let txt = "";
+  let i;
+  for (i = 0; i < x.length; i++) {
+    txt = txt + " " + x.options[i].text;
+  }
+  return text;
+}
+	</script>
+
+<form action='/books/create' method='post'>
+<body onload="javascript:aoCarregar();">
+	<a href="javascript:perguntaAnterior();">Pergunta anterior</a>
+	<a href="javascript:proximaPergunta();">Pergunta seguinte</a>
+	<hr/>
+	<input type="hidden" id="perguntaActual" name="question1" value=""/><br />
+	<div id="pergunta1"> Why are you investing in crypto?<br>
+    <select id="mySelect">
+  <option value="1">Porque quero ganhar dinheiro  </option>
+  <option value="2">So estou curioso</option>
+  <option value="3">Porque quero investir o que me sobra</option>
+  <option value="0">Nao sei</option>
+</select>
+<input type="button" onclick="proximaPergunta()" value="Next">
+    </div>
+	<div id="pergunta2">Pergunta 2!
+         <select id="mySelect">
+  <option value="1">Porque quero ganhar dinheiro  </option>
+  <option value="2">So estou curioso</option>
+  <option value="3">Porque quero investir o que me sobra</option>
+  <option value="0">Nao sei</option>
+</select>
+<input type="button" onclick="proximaPergunta()" value="Next">
+    </div>
+	<div id="pergunta3">Pergunta 3!
+        <select id="mySelect">
+  <option value="1">Porque quero ganhar dinheiro  </option>
+  <option value="2">So estou curioso</option>
+  <option value="3">Porque quero investir o que me sobra</option>
+  <option value="0">Nao sei</option>
+</select>
+<input type="button" onclick="proximaPergunta()" value="Next">
+    </div>
+	<div id="pergunta4">Pergunta 4!
+        <select id="mySelect">
+  <option value="1">Porque quero ganhar dinheiro  </option>
+  <option value="2">So estou curioso</option>
+  <option value="3">Porque quero investir o que me sobra</option>
+  <option value="0">Nao sei</option>
+</select>
+<input type="button" onclick="proximaPergunta()" value="Next">
+    </div>
+	<div id="pergunta5">Pergunta 5!
+        <select id="mySelect">
+  <option value="1">Porque quero ganhar dinheiro  </option>
+  <option value="2">So estou curioso</option>
+  <option value="3">Porque quero investir o que me sobra</option>
+  <option value="0">Nao sei</option>
+</select>
+<input type="button" onclick="getOptions()" value="Next">
+    </div>
+    
+</body>
+</form>
+
+
+
