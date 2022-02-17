@@ -19,6 +19,15 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 router.get('/profile', (req, res,next) => {
   res.render('profile/profile', { userInSession: req.session.currentUser });
 });
+router.get('/favoritos', (req, res,next) => {
+  res.render('profile/favoritos', { userInSession: req.session.currentUser });
+});
+
+router.post('/favoritos', (req, res,next) => {
+console.log('formulario enviado')
+  res.render('profile/favoritos', { userInSession: req.session.currentUser });
+});
+
 
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
@@ -135,7 +144,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
         }
         req.session.user = user;
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        return res.redirect("/auth/profile");
       });
     })
 

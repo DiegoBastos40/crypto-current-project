@@ -41,7 +41,7 @@
 }
 	</script>
 
-<form action='/books/create' method='post'>
+<form action='/auth/favoritos' method='POST'>
 <body onload="javascript:aoCarregar();">
 	<a href="javascript:perguntaAnterior();">Pergunta anterior</a>
 	<a href="javascript:proximaPergunta();">Pergunta seguinte</a>
@@ -90,7 +90,8 @@
   <option value="3">I dont have money at all</option>
   <option value="0">I will invest everything than i have</option>
 </select>
-<input type="button" onclick="getOptions()" value="Finish">
+<input type="button" onclick="proximaPergunta()" value="Next">
+<button type="submit">Send Avaliation</button>
     </div>
     
 </body>
