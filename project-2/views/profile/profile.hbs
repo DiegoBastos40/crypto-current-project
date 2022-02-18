@@ -1,101 +1,71 @@
+<div class="col-lg-7 mx-0 px-0">
+   <div class="progress">
+      <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" style="width: 0%"></div>
+   </div>
+   <div id="qbox-container">
+      <form action="/profile" class="needs-validation" id="form-wrapper" method="post" name="form-wrapper" novalidate="">
+         <div id="steps-container">
 
-    <h1>Questionario</h1>
-	<script type="text/javascript">
-		let maxPerguntas = 5;
-		function aoCarregar(){
-			escondeTudo();
-			document.getElementById('pergunta1').style.display = "block";
-			document.getElementById('perguntaActual').value = 1;
-		}
-		function escondeTudo(){
-			for( i = 1; i <= maxPerguntas; i++){
-			document.getElementById('pergunta'+i).style.display = "none";
-			}
-		}
-		function perguntaAnterior(){
-			actual = document.getElementById('perguntaActual').value;
-			if(actual > 1){
-				escondeTudo();
-				document.getElementById('perguntaActual').value--;
-				document.getElementById('pergunta'+document.getElementById('perguntaActual').value).style.display = "block";
-			}
-		}
+            <div class="step">
+               <h4>What is the best way to invest?</h4>
+               <div class="form-check ps-0 q-box">
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_1_a" name="q_1" type="radio" value="a"> 
+                     <label class="form-check-label question__label" for="q_1_a">I want to take risks</label>
+                  </div>
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_1_b" name="q_1" type="radio" value="b"> 
+                     <label class="form-check-label question__label" for="q_1_b">I want to take it easy</label>
+                  </div>
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_1_c" name="q_1" type="radio" value="c"> 
+                     <label class="form-check-label question__label" for="q_1_c">I want to take calculated risks</label>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="step">
+               <h4>Which topics are you most interested in?</h4>
+               <div class="form-check ps-0 q-box">
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_2_a" name="q_2" type="radio" value="a"> 
+                     <label class="form-check-label question__label" for="q_2_a">Blockchain Solutions</label>x
+                  </div>
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_2_b" name="q_2" type="radio" value="b"> 
+                     <label class="form-check-label question__label" for="q_2_b">Gaming</label>
+                  </div>
+                   <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_2_c" name="q_2" type="radio" value="c"> 
+                     <label class="form-check-label question__label" for="q_2_c">Currency</label>
+                  </div>
+               </div>
+            </div>
 
-		function proximaPergunta(){
-			actual = document.getElementById('perguntaActual').value;
-			if(actual >= 1 && actual < maxPerguntas){
-				escondeTudo();
-				document.getElementById('perguntaActual').value++;
-				document.getElementById('pergunta'+document.getElementById('perguntaActual').value).style.display = "block";
-			}
-		}
-
-       function getOptions() {
-  let x = document.getElementById("mySelect");
-  let txt = "";
-  let i;
-  for (i = 0; i < x.length; i++) {
-    txt = txt + " " + x.options[i].text;
-  }
-  return text;
-}
-	</script>
-
-<form action='/auth/favoritos' method='POST'>
-<body onload="javascript:aoCarregar();">
-	<a href="javascript:perguntaAnterior();">Pergunta anterior</a>
-	<a href="javascript:proximaPergunta();">Pergunta seguinte</a>
-	<hr/>
-	<input type="hidden" id="perguntaActual" name="question1" value=""/><br />
-	<div id="pergunta1"> Why are you investing in crypto?<br>
-    <select id="mySelect">
-  <option value="1">Porque quero ganhar dinheiro  </option>
-  <option value="2">So estou curioso</option>
-  <option value="3">Porque quero investir o que me sobra</option>
-  <option value="0">Nao sei</option>
-</select>
-<input type="button" onclick="proximaPergunta()" value="Next">
-    </div>
-	<div id="pergunta2">How much money you intend invest?<br>
-         <select id="mySelect">
-  <option value="1">All then i have </option>
-  <option value="2">I dont know</option>
-  <option value="3">just the rest of my money</option>
-  <option value="0">start with a fixed value</option>
-</select>
-<input type="button" onclick="proximaPergunta()" value="Next">
-    </div>
-	<div id="pergunta3">What you know about crypto market?<br>
-        <select id="mySelect">
-  <option value="1">Nothing</option>
-  <option value="2">Study a lot every day</option>
-  <option value="3">Just what people tell me</option>
-  <option value="0">the basics things</option>
-</select>
-<input type="button" onclick="proximaPergunta()" value="Next">
-    </div>
-	<div id="pergunta4">How much time do you want a return?<br>
-        <select id="mySelect">
-  <option value="1">The faster possible</option>
-  <option value="2">I am not have rush</option>
-  <option value="3">never thing about that</option>
-  <option value="0">1 year </option>
-</select>
-<input type="button" onclick="proximaPergunta()" value="Next">
-    </div>
-	<div id="pergunta5">Where came from your rent?<br>
-        <select id="mySelect">
-  <option value="1">My family have money</option>
-  <option value="2">Just of my work</option>
-  <option value="3">I dont have money at all</option>
-  <option value="0">I will invest everything than i have</option>
-</select>
-<input type="button" onclick="proximaPergunta()" value="Next">
-<button type="submit">Send Avaliation</button>
-    </div>
-    
-</body>
-</form>
-
+            <div class="step">
+               <h4>What is the main reason you are interested in cryptocurrencies?</h4>
+               <div class="form-check ps-0 q-box">
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_3_a" name="q_3" type="radio" value="a"> 
+                     <label class="form-check-label question__label" for="q_3_a">Ideological issues</label>
+                  </div>
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_3_b" name="q_3" type="radio" value="b"> 
+                     <label class="form-check-label question__label" for="q_3_b">I want to be rich</label>
+                  </div>
+                  <div class="q-box__question">
+                     <input class="form-check-input question__input" id="q_3_c" name="q_3" type="radio" value="c"> 
+                     <label class="form-check-label question__label" for="q_3_c">I want my money safe</label>
+                  </div>
+               </div>
+            </div>
+            </div>
+         </div>
+         <div id="q-box__buttons">
+            <button id="submit-btn" type="submit">Submit</button>
+         </div>
+         </div>
+      </form>
+   </div>
 
 

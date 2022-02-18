@@ -7,6 +7,7 @@ const userSchema = new Schema(
       type: String,
       // unique: true -> Ideally, should be unique, but its up to you
     },
+    suggested: [String],
     password: String,
   },
   {

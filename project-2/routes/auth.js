@@ -17,15 +17,16 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 /* router.get('/profile', (req, res,next) => res.render('profile/profile')); */
 
 router.get('/profile', (req, res,next) => {
-  res.render('profile/profile', { userInSession: req.session.currentUser });
+  res.render('profile/profile', { userInSession: req.session.user });
 });
 router.get('/favoritos', (req, res,next) => {
-  res.render('profile/favoritos', { userInSession: req.session.currentUser });
+  console.log(req.session.user)
+  res.render('profile/favoritos', { userInSession: req.session.user });
 });
 
 router.post('/favoritos', (req, res,next) => {
 console.log('formulario enviado')
-  res.render('profile/favoritos', { userInSession: req.session.currentUser });
+  res.render('profile/favoritos', { userInSession: req.session.user });
 });
 
 

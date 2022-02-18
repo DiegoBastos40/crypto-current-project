@@ -30,7 +30,8 @@ app.use("/", index);
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
-
+const quisRoutes = require('./routes/quiz.routes');
+app.use('/',quisRoutes)
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
