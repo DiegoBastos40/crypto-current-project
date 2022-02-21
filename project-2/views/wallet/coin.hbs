@@ -1,9 +1,22 @@
 <div class="container">
-<h3>{{coin.symbol}}</h3>
-<p>{{price}}</p>
-<p>{{priceChange}}</p>
+<h3>{{coin.name}}</h3>
+<p>{{coin.show_symbol}}</p>
+<p> rank:{{coin.rank}}</p>
+<p> price:{{coin.markets.0.price}}</p>
+<p>market_cap:{{coin.market_cap}}</p>
+<p>total_volume_24h:{{coin.total_volume_24h}}</p>
+<p>low_24h:{{coin.low_24h}}</p>
+<p>high_24h:{{coin.high_24h}}</p>
+<p>delta_1h:{{coin.delta_1h}}</p>
+<p>delta_24h:{{coin.delta_24h}}</p>
+<p>delta_7d:{{coin.delta_7d}}</p>
+<p>delta_30d:{{coin.delta_30d}}</p>
+
+
+
 <div class="buttom">
 <a href="/wallet/{{_id}}/edit">Edit</a>
+<a href="/wallet/{{_id}}/favoritos"> Add Favoritos</a>
 <form action="/wallet/{{_id}}/delete" method="post">
 <button>Delete</button>
 </form>  
