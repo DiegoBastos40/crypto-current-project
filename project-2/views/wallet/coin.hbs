@@ -1,0 +1,14 @@
+{{#each coin}}
+<div class="container">
+<h3>{{symbol}}</h3>
+<p>{{price}}</p>
+<p>{{priceChange}}</p>
+<div class="buttom">
+<a href="/wallet/{{_id}}/edit">Edit</a>
+<form action="/wallet/{{_id}}/delete" method="post">
+<button>Delete</button>
+</form>  
+</div>
+
+</div>
+{{/each}}

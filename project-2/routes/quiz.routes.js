@@ -34,7 +34,7 @@ router.post('/profile', async (req, res) => {
         cbc : ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
         cca : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
         ccb : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        ccc: ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
+        ccc: ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra']
     }
     let user = req.session.user
     const userAnswer = dictionary[combination]
@@ -46,9 +46,10 @@ router.post('/profile', async (req, res) => {
         userToChange.save()
     }));
 
-    let userUpdated = await User.findById(user._id);
-    req.session.user = userUpdated ;
-        res.redirect('/auth/favoritos')
+   setTimeout(()=>{
+    res.redirect('/auth/favoritos') 
+   },50)
+        
     
     
 });

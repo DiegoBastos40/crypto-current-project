@@ -19,7 +19,8 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 router.get('/profile', (req, res,next) => {
   res.render('profile/profile', { userInSession: req.session.user });
 });
-router.get('/favoritos', (req, res,next) => {
+router.get('/favoritos', async(req, res,next) => {
+  req.session.user = await User.findById(req.session.user._id); 
   console.log(req.session.user)
   res.render('profile/favoritos', { userInSession: req.session.user });
 });
