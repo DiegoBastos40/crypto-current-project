@@ -1,13 +1,6 @@
 <h1>Wallet</h1>
 
-{{#each coin}}
-<p>{{symbol}}</p>
-<p>{{priceChange}}</p>
-<p>{{volume}}</p>
-<p>{{percentChange}}</p>
-
+{{#each coins}}
+<a href="/coins/{{symbol}}">{{name}}</a>
 {{/each}}
 
-{{#each ticker}}
-<p>{{this}}</p>
-{{/each}}
