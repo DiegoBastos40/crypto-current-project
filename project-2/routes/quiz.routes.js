@@ -264,7 +264,7 @@ router.post("/profile", async (req, res) => {
   //   novo:
 
   const response = await axios.get(
-    `https://coinlib.io/api/v1/coinlist?key=bea89b3b21612ab2`
+    `https://coinlib.io/api/v1/coinlist?key=d996a4fc60938e2e`
   );
   const coins = response.data.coins;
 
