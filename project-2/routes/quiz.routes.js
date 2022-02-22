@@ -1,59 +1,332 @@
-const router = require('express').Router();
-const User = require('./../models/User.model');
-const isLoggedIn = require('./../middleware/isLoggedIn');
-router.post('/profile', async (req, res) => {
-    const { q_1, q_2, q_3 } = req.body;
-    const combination = q_1 + q_2 + q_3;
-    console.log(q_1, q_2, q_3 )
-    console.log(combination);
-    
-    const dictionary = {
-        aaa : ['https://www.coinbase.com/pt-PT/price/bitcoin', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        aab : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        aac : ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        aba : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        abb : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        abc : ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        aca : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        acb : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        acc:  ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        baa : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        bab : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        bac : ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        bba : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        bbb : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        bbc : ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        bca : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        bcb : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        bcc: ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        caa : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        cab : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        cac : ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        cba : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        cbb : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        cbc : ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra'],
-        cca : ['crypto.com', 'Binance', 'Terra', 'File Coin', 'solana', 'Pokadoti'],
-        ccb : ['crypto.com', 'binance', 'Theta Network', 'AXS', 'Pankake Swap', 'Uniswap'],
-        ccc: ['XRP', 'Bitcoin', 'Ethereum', 'Cardano', 'USD coin', 'Terra']
-    }
-    let user = req.session.user
-    const userAnswer = dictionary[combination]
-    
-    await Promise.all(userAnswer.map(async (val) => {
-        let userToChange = await User.findById(user._id);
-        
-        userToChange.suggested.push(val)
-        userToChange.save()
-    }));
+const router = require("express").Router();
+const User = require("./../models/User.model");
+const isLoggedIn = require("./../middleware/isLoggedIn");
+//novo:
+const axios = require("axios");
+// 
 
-   setTimeout(()=>{
-    res.redirect('/auth/favoritos') 
-   },50)
-        
-    
-    
+router.post("/profile", async (req, res) => {
+  const { q_1, q_2, q_3 } = req.body;
+  const combination = q_1 + q_2 + q_3;
+  console.log(q_1, q_2, q_3);
+  console.log(combination);
+
+
+  /*
+    preciso puchar a data da API para o dictionary
+     */
+
+  const dictionary = {
+    aaa: [
+      "BTC",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    aab: [
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    aac: [
+      "XRP",
+      "BTC",
+      "ADA",
+      "USDC",
+      "LUNA",
+      "BTC",
+    ],
+    aba: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    abb: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    abc: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+    aca: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    acb: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    acc: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+    baa: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    bab: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    bac: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+    bba: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    bbb: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    bbc: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+    bca: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    bcb: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    bcc: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+    caa: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    cab: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    cac: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+    cba: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    cbb: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    cbc: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+    cca: [
+      ,
+      "CRO",
+      "BNB",
+      "LUNA",
+      "FIL",
+      "SOL",
+      "DOT",
+    ],
+    ccb: [
+      ,
+      "CRO",
+      "BNB",
+      "THETA",
+      "AXS",
+      "CAKE",
+      "UNI",
+    ],
+    ccc: [
+      ,
+      "XRP",
+      "BTC",
+      "ETH",
+      "ADA",
+      "USDC",
+      "LUNA",
+    ],
+  };
+  let user = req.session.user;
+  const userAnswer = dictionary[combination];
+
+  //   novo:
+
+  const response = await axios.get(
+    `https://coinlib.io/api/v1/coinlist?key=bea89b3b21612ab2`
+  );
+  const coins = response.data.coins;
+
+
+
+  function apiCoinsValue(coinSymbolArr) {
+    let sugestionArray = [];
+    for (let i = 0; i < coinSymbolArr.length; i++) {
+        for (let y = 0; y < coins.length; y++){
+            if (coinSymbolArr[i] == coins[y].symbol) {
+                sugestionArray.push(coins[y]);
+              }
+        }
+    }
+    return sugestionArray
+  }
+
+  let coinsArr = apiCoinsValue(userAnswer)
+  console.log('toSave', coinsArr)
+
+  await Promise.all(
+    coinsArr.map(async (val) => {
+      let userToChange = await User.findById(user._id);
+      userToChange.suggested.push(val);
+      userToChange.save();
+    })
+  );
+
+
+//   console.log("epa epa", apiCoinsValue([
+//     ,
+//     "XRP",
+//     "BTC",
+//     "ETH",
+//     "ADA",
+//     "USDC",
+//     "LUNA",
+//   ]))
+
+
+//   await Promise.all(
+//     userAnswer.map(async (val) => {
+//       let userToChange = await User.findById(user._id);
+//       userToChange.suggested = apiCoinsValue(val);
+//     //   userToChange.suggested.push(apiCoinsValue(val));
+//       userToChange.save();
+//     })
+//   );
+
+//   await Promise.all(
+//     userAnswer.map(async (val) => {
+//       let userToChange = await User.findById(user._id);
+//       userToChange.suggested = apiCoinsValue(val);
+//     //   userToChange.suggested.push(apiCoinsValue(val));
+//       userToChange.save();
+//     })
+//   );
+
+
+  setTimeout(() => {
+    res.redirect("/auth/favoritos");
+  }, 50);
 });
 
-
- 
 module.exports = router;
