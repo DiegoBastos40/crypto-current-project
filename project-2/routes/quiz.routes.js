@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const User = require('./../models/User.model');
 const isLoggedIn = require('./../middleware/isLoggedIn');
+require('dotenv').config();
+const axios = require('axios');
+const Coinlib = require ('coinlib-api') ; 
+const CoinlibClient = new Coinlib('a082867c6cfecc56') ;
+
 router.post('/profile', async (req, res) => {
     const { q_1, q_2, q_3 } = req.body;
     const combination = q_1 + q_2 + q_3;
@@ -44,6 +49,7 @@ router.post('/profile', async (req, res) => {
         
         userToChange.suggested.push(val)
         userToChange.save()
+
     }));
 
    setTimeout(()=>{

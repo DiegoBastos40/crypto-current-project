@@ -1,9 +1,16 @@
 <h1>{{title}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+<p>Welcome Ironhacker!
+     {{#if user}}
+{{user.username}}
+{{/if}}
+</p>
+
 <div>
 <a href="/auth/signup"> Signup</a>
 <a href="/auth/login"> Login</a>
 <a href="/auth/logout"> Logout</a>
+<a href="/auth/profile"> Profile</a>
+
 </div>
 
  
