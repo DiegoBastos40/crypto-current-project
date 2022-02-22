@@ -2,7 +2,9 @@
 
 {{#each coins}}<br>
 <a href="/coins/{{symbol}}">{{name}}</a>
-<a href="/wallet/{{_id}}/favoritos"> Add Favoritos</a>
+<form action="/wallet/{{symbol}}" method="post">
+<button type="submit">Add to favorite</button>
+</form>
 <br>
 {{/each}}
 

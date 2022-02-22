@@ -35,4 +35,22 @@ router.get("/coins", async (req, res, next) => {
     }
   });
 
+  router.post("/wallet/:symbol", async (req, res, next) => {
+    try {
+        const symbol = req.params.symbol
+        console.log('symbol',symbol)
+        const response = await axios.get(`https://coinlib.io/api/v1/coin?key=bea89b3b21612ab2&symbol=${symbol}`);
+        const coin = response.data
+        const user = req.session.user
+ let userToChange = await User.findById(user._id);
+userToChange.suggested.push(coin);
+userToChange.save();
+
+ res.redirect('/auth/favoritos')
+    } catch (e) {
+        console.log("error occurred", e);
+    }
+  });
+
+
 module.exports = router;

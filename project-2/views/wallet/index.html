@@ -7,7 +7,7 @@
     <title>Chart</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="/project-2/chart/index.js"></script>
+    
 </head>
 <body>
     <canvas id="myChart" width="400px" height="400px"></canvas>
@@ -26,7 +26,7 @@ let volumeData = volumeArr.slice(3,40);
 
     responseFromAPI.data.coins.forEach((coin, i) => {
         if(i > 3 && i < 40 ){
-            pricesArr.push(coin.symbol);
+            pricesArr.push(coin.name);
             volumeArr.push(coin.market_cap)
         } 
     })
