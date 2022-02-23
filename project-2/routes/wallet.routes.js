@@ -47,7 +47,16 @@ router.post("/wallet/:symbol", async (req, res, next) => {
     const coin = response.data;
     const user = req.session.user;
     let userToChange = await User.findById(user._id);
-    userToChange.suggested.push(coin);
+//     const exist = userToChange.suggestion.filter(
+//           ({ symbol }) => symbol.some(
+//             ({ value }) => value.includes(symbol)
+//           ))
+// if  (exist){
+//   userToChange.suggested.push(coin);
+// }
+    
+
+
     userToChange.save();
 
     res.redirect("/auth/favoritos");
@@ -59,20 +68,52 @@ router.post("/wallet/:symbol", async (req, res, next) => {
 router.post("/wallet/:symbol/delete", async (req, res, next) => {
   try {
     const symbol = req.params.symbol;
-    console.log("symbol", symbol);
-    const response = await axios.get(
-      `https://coinlib.io/api/v1/coin?key=d996a4fc60938e2e&symbol=${symbol}`
-    );
-    const coin = response.data;
     const user = req.session.user;
-    let userToChange = await User.findByIdAndUpdate(user._id);
-    userToChange.suggested.splice(coin.symbol);
-    userToChange.save();
+
+    // await User.findByIdAndUpdate(user._id, {
+    //   $pull: {suggested: {symbol: symbol}}
+    // }, {new: true})
+    
+
+    // const response = await axios.get(
+    //   `https://coinlib.io/api/v1/coin?key=d996a4fc60938e2e&symbol=${symbol}`
+    // );
+    // const coin = response.data;
+    
+    // let userToChange = await User.findByIdAndUpdate(user._id);
+    // for(let i = 0; i < userToChange.suggested.length; i++){
+    //   if ( userToChange.suggested.symbol[i] == symbol){
+    //     // userToChange.suggested.splice(i, 1);
+    //     console.log("epa: ", userToChange.suggested[i])
+    //   }
+    // }
+    // userToChange.save()
+
+    let userToChange = await User.findById(user._id);
+    for(let i = 0; i < userToChange.suggested.length; i++){
+      if ( userToChange.suggested[i].symbol === symbol){
+        userToChange.suggested.splice(i, 1);
+      }
+    }
+    userToChange.save()
+
 
     res.redirect("/auth/favoritos");
   } catch (e) {
     console.log("error occurred", e);
   }
 });
+
+// router.post("/wallet/:symbol/delete",  (req, res, next) => {
+//   const id = req.session.user;
+//   const symbol = req.params.symbol;
+//   User.findByIdAndUpdate(id, {$pull: {suggested: symbol}})
+//   .then(()=>{
+
+//     res.redirect("/auth/favoritos");
+
+//   })
+//   .catch((err)=>next(err));
+// })
 
 module.exports = router;

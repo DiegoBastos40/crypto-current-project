@@ -22,7 +22,7 @@ const projectName = "project-2";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.use(function (req, res, next) {
-    console.log(app.locals);
+    // console.log(app.locals);
     app.locals.user = req.session.user;
     next();
   });

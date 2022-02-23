@@ -21,7 +21,7 @@ router.get('/profile', (req, res,next) => {
 });
 router.get('/favoritos', async(req, res,next) => {
   req.session.user = await User.findById(req.session.user._id); 
-  console.log(req.session.user)
+  // console.log(req.session.user)
   res.render('profile/favoritos', { userInSession: req.session.user });
 });
 
