@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 nav {
     position: absolute;
-    top: 20%;
+    top: 10%;
     right: 0;
-    left: 0;
+    left: 65%;
     width: 319px;
     display: table;
     margin: 0 auto;
@@ -14,13 +15,13 @@ nav {
     width: 33.333%;
     display: table-cell;
     text-align: center;
-    color: #8f8c8c;
+    color:#89ff00;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 10px 20px;
     transition: 0.2s ease color;
-    font-size: 30px;
+    font-size: 15px;
 
   }
   
@@ -107,10 +108,10 @@ nav {
   }
 
 .body-nav{
-    background-image: url(/images/2446003-golden-background-concept-digital-currency-bitcoin-illustration-vetor.jpg);
+    background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
     background-size: cover;
+    
 }
-
 
 .login-box {
     position: absolute;
@@ -292,6 +293,117 @@ nav {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 30px;
   }
+
+  .step {
+      text-align: center;
+    width: 80%;
+    max-width: 720px;
+  justify-content: center;
+    color: white;
+    font-size: 20px;
+    margin: 50px auto;
+    padding: 1.3em;
+    background:rgb(19, 18, 18);
+    border-radius: .75em;
+    -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+    filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+    box-shadow: 
+    0 2px 2px pink,
+    0 0px 5px pink,
+    0 0px 4px pink,
+    0 5px 20px pink,
+    inset 0 0 15px pink;
+  }
+
+  .body-profile{
+      background-color:#f168b1;
+      font-family: 'Raleway', sans-serif;
+      color: gray;
+      font-weight: bold;
+     
+      background-size: 80px;
+      
+      }
+      .body-profile h1{
+          text-align: center;
+          color: pink;
+      }
+
+      #submit-btn{
+        text-align: center;
+        width: 30%;
+        max-width: 200px;
+        color: white;
+        font-size: 20px;
+        margin: 20px auto;
+        padding: 1.3em;
+        background: black;
+        border-radius: .75em;
+        -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        box-shadow: 
+        0 2px 2px pink,
+        0 0px 5px pink,
+        0 0px 4px pink,
+        0 5px 20px pink,
+      
+        inset 0 0 15px pink;
+      }
  
+      .body-profile img {
+          width: 150px;
+          height: 50px;
+          
+      }
+
+      .body-favoritos {
+          text-align: center;
+      }
+
+      .box-favoritos{
+        text-align: center;
+        width: 80%;
+        max-width: 720px;
+      justify-content: center;
+        color: white;
+        font-size: 20px;
+        margin: 50px auto;
+        padding: 1.3em;
+        background:rgb(19, 18, 18);
+        border-radius: .75em;
+        -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        box-shadow: 
+        0 2px 2px pink,
+        0 0px 5px pink,
+        0 0px 4px pink,
+        0 5px 20px pink,
+        inset 0 0 15px pink;
+      }
+
+      .body-favoritos a {
+          text-decoration: none;
+      }
+
+      .body-favoritos button {
+        text-align: center;
+        width: 80%;
+        max-width: 720px;
+      justify-content: center;
+        color: white;
+        font-size: 20px;
+        margin: 50px auto;
+        padding: 1.3em;
+        background:rgb(19, 18, 18);
+        border-radius: .75em;
+        -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        box-shadow: 
+        0 2px 2px pink,
+        0 0px 5px pink,
+        0 0px 4px pink,
+        0 5px 20px pink,
+        inset 0 0 15px pink;
+      }
