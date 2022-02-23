@@ -25,9 +25,9 @@ let volumeData = volumeArr.slice(3,40);
     
 
     responseFromAPI.data.coins.forEach((coin, i) => {
-        if(i > 3 && i < 40 ){
+        if(i > 3 && i < 60 ){
             pricesArr.push(coin.name);
-            volumeArr.push(coin.market_cap)
+            volumeArr.push(coin.market_cap )
         } 
     })
  

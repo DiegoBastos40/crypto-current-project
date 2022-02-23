@@ -1,14 +1,29 @@
-<form action="/auth/signup" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
+<body class="body-login">
+   
 
-   <button type="submit">Submit</button>
-</form>
+<div class="login-box">
+  <h2>Signup</h2>
+  <form action="/auth/signup" method="POST">
+    <div class="user-box">
+      <input type="text" name="username">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password">
+      <label>Password</label>
+    </div>
+    <button class="noselect"  type="submit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+   </button>
+  </form>
+</div>
 
 {{#if errorMessage}}
    {{errorMessage}}
 {{/if}}
+
+</body>

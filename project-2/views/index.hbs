@@ -1,16 +1,17 @@
-<h1>{{title}} 🚀</h1>
-<p>Welcome Ironhacker!
+{{!-- <h1>{{title}} 🚀</h1>
+<p>Welcome Ironhacker! --}}
+
+<body class="body-nav">
+     
+     
      {{#if user}}
 {{user.username}}
 {{/if}}
-</p>
-
-<div>
+<nav>
 <a href="/auth/signup"> Signup</a>
 <a href="/auth/login"> Login</a>
 <a href="/auth/logout"> Logout</a>
-<a href="/auth/profile"> Profile</a>
 
-</div>
+</nav>
 
- 
+</body>
