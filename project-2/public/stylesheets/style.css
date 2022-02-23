@@ -116,7 +116,7 @@ nav {
 .login-box {
     position: absolute;
     top: 50%;
-    left: 70%;
+    left: 50%;
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
@@ -163,7 +163,7 @@ nav {
   .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #03e9f4;
+    color:#89ff00;
     font-size: 12px;
   }
   
@@ -171,7 +171,7 @@ nav {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #03e9f4;
+    color: #89ff00;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -272,12 +272,12 @@ nav {
   }
 
   .body-login{
-      background-image: url(/images/mercado-de-criptomoeda.jpg);
+      background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
   }
   .noselect {
     background-color:black;
     border: none;
-    color:  #03e9f4;
+    color: #89ff00;
     padding: 5px 15px;
     text-align: center;
     text-decoration: none;
@@ -302,33 +302,31 @@ nav {
     max-width: 720px;
   justify-content: center;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     margin: 50px auto;
     padding: 1.3em;
-    background:rgb(19, 18, 18);
+    background:rgb(78, 76, 76);
     border-radius: .75em;
     -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
     filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
     box-shadow: 
-    0 2px 2px pink,
-    0 0px 5px pink,
-    0 0px 4px pink,
-    0 5px 20px pink,
-    inset 0 0 15px pink;
+    0 2px 2px white,
+    0 0px 5px white,
+    0 0px 4px white,
+    0 5px 20px white,
+    inset 0 0 15px white;
   }
 
   .body-profile{
-      background-color:#f168b1;
-      font-family: 'Raleway', sans-serif;
-      color: gray;
-      font-weight: bold;
-     
-      background-size: 80px;
+    background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+  
       
       }
       .body-profile h1{
           text-align: center;
-          color: pink;
+          color:white;
       }
 
       #submit-btn{
@@ -339,17 +337,17 @@ nav {
         font-size: 20px;
         margin: 20px auto;
         padding: 1.3em;
-        background: black;
+        background: rgb(78, 76, 76);
         border-radius: .75em;
         -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         box-shadow: 
-        0 2px 2px pink,
-        0 0px 5px pink,
-        0 0px 4px pink,
-        0 5px 20px pink,
+        0 2px 2px white,
+        0 0px 5px white,
+        0 0px 4px white,
+        0 5px 20px white,
       
-        inset 0 0 15px pink;
+        inset 0 0 15px white;
       }
  
       .body-profile img {
@@ -360,6 +358,9 @@ nav {
 
       .body-favoritos {
           text-align: center;
+          background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
+          background-size: cover;
+          font-family: 'Raleway', sans-serif;
       }
 
       .box-favoritos{
@@ -371,20 +372,22 @@ nav {
         font-size: 20px;
         margin: 50px auto;
         padding: 1.3em;
-        background:rgb(19, 18, 18);
+        background:#79d3e6;
         border-radius: .75em;
         -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         box-shadow: 
-        0 2px 2px pink,
-        0 0px 5px pink,
-        0 0px 4px pink,
-        0 5px 20px pink,
-        inset 0 0 15px pink;
+        0 2px 2px white,
+        0 0px 5px white,
+        0 0px 4px white,
+        0 5px 20px white,
+        inset 0 0 15px white;
       }
 
       .body-favoritos a {
           text-decoration: none;
+          color:black;
+          
       }
 
       .body-favoritos button {
@@ -396,14 +399,14 @@ nav {
         font-size: 20px;
         margin: 50px auto;
         padding: 1.3em;
-        background:rgb(19, 18, 18);
+        background:#79d3e6;
         border-radius: .75em;
         -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         box-shadow: 
-        0 2px 2px pink,
-        0 0px 5px pink,
-        0 0px 4px pink,
-        0 5px 20px pink,
-        inset 0 0 15px pink;
+        0 2px 2px white,
+        0 0px 5px white,
+        0 0px 4px white,
+        0 5px 20px white,
+        inset 0 0 15px white;
       }

@@ -54,7 +54,7 @@ router.post("/wallet/:symbol", async (req, res, next) => {
 // if  (exist){
 //   userToChange.suggested.push(coin);
 // }
-    
+userToChange.suggested.push(coin);
 
 
     userToChange.save();
