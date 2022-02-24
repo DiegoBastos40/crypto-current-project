@@ -1,7 +1,7 @@
 <body class="body-favoritos">
     
 <div class="box-favoritos">
-<h1>Favorites</h1>
+<h1>Your Wallet</h1>
 
 {{#each userInSession.suggested}}
 {{!-- <p>{{this}}</p> --}}
@@ -14,7 +14,8 @@
 {{/each}}
 <br>
 </div>
-
-<a href="/coins/"> Select all Market</a>
+<div class="box-select-market">
+<a href="/coins/"> Select your favorites Coins</a>
+</div>
 
 </body>

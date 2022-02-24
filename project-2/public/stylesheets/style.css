@@ -1,13 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+* {
+  font-family: 'Titillium Web', sans-serif;
+}
 nav {
     position: absolute;
-    top: 10%;
-    right: 0;
-    left: 65%;
+    top: 90%;
+    left: 50%;
+    right:0 ;
     width: 319px;
     display: table;
     margin: 0 auto;
     transform: translateY(-50%);
+    
+  }
+  .text-index p {
+      font-weight:bolder;
+  }
+  
+  .text-index {
+    position: absolute;
+    font-size: 30px;
+    bottom: 15%;
+    right: 0;
+    left:40% ;
+    display: table;
+    margin: 0 auto;
+    width: 40%;
+    font-family: 'Raleway', sans-serif;
+    color: #003249;
+    text-align: center;
   }
   
   nav a {
@@ -15,13 +37,13 @@ nav {
     width: 33.333%;
     display: table-cell;
     text-align: center;
-    color:#89ff00;
+    color:#003249;
     text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
+    font-weight: bolder ;
     padding: 10px 20px;
     transition: 0.2s ease color;
-    font-size: 15px;
+    font-size: 30px;
+    right: 20%;
 
   }
   
@@ -85,7 +107,7 @@ nav {
   }
   
   nav a:hover {
-    color: #fff;
+    color:#2a3c24;
   }
   
   nav a:hover:before,
@@ -108,8 +130,15 @@ nav {
   }
 
 .body-nav{
-    background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
-    background-size: cover;
+
+  background-image: url(/images/img222.png);
+   background-repeat: no-repeat;  
+   background-color:#ccdbdc;
+   background-position-x: 120px;
+   background-position-y: 50px;
+   
+  
+   
     
 }
 
@@ -120,11 +149,10 @@ nav {
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
+    background:#80CED7;
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
-  }
+}
   
   .login-box h2 {
     margin: 0 0 30px;
@@ -141,7 +169,7 @@ nav {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: #003249;
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
@@ -154,7 +182,7 @@ nav {
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: #003249;
     pointer-events: none;
     transition: .5s;
   }
@@ -163,22 +191,24 @@ nav {
   .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color:#89ff00;
+    color:#003249;
     font-size: 12px;
+    font-weight: bolder;
   }
   
   .login-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #89ff00;
+    color: #003249;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+    font-weight: bolder;
   }
   
   .login-box a:hover {
@@ -272,17 +302,19 @@ nav {
   }
 
   .body-login{
-      background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
+     background-color:#CCDBDC;
   }
   .noselect {
-    background-color:black;
+    background-color:#007EA7;
     border: none;
-    color: #89ff00;
+    color: #003249 ;
     padding: 5px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
+    margin-left: 130px;
+    
   }
  
   button :hover {
@@ -301,43 +333,50 @@ nav {
     width: 80%;
     max-width: 720px;
   justify-content: center;
-    color: white;
+    color:#003249;
     font-size: 18px;
     margin: 50px auto;
     padding: 1.3em;
-    background:rgb(78, 76, 76);
+    background: #9AD1D4;
     border-radius: .75em;
     -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
     filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
     box-shadow: 
-    0 2px 2px white,
-    0 0px 5px white,
-    0 0px 4px white,
-    0 5px 20px white,
-    inset 0 0 15px white;
+    0 2px 2px #80CED7,
+    0 0px 5px #80CED7,
+    0 0px 4px #80CED7,
+    0 5px 20px #80CED7,
+    inset 0 0 15px #80CED7;
+  }
+  .login-box h2 {
+      color: #003249;
+  }
+  .q-box__question{
+      display: flex;
+      text-align: start;
+      margin-left: 36vh;
   }
 
   .body-profile{
-    background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
-    background-size: cover;
-    font-family: 'Raleway', sans-serif;
+      
+       background-color:#CCDBDC;
   
       
       }
       .body-profile h1{
           text-align: center;
-          color:white;
+          color:#007EA7;
       }
 
       #submit-btn{
         text-align: center;
         width: 30%;
         max-width: 200px;
-        color: white;
+        color: #003249;
         font-size: 20px;
         margin: 20px auto;
         padding: 1.3em;
-        background: rgb(78, 76, 76);
+        background: #9AD1D4;
         border-radius: .75em;
         -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
@@ -358,21 +397,70 @@ nav {
 
       .body-favoritos {
           text-align: center;
-          background-image: url(/images/4-Blockchain-Energy-Companies-to-Watch-in-2019.jpg);
-          background-size: cover;
-          font-family: 'Raleway', sans-serif;
+          background-color: #CCDBDC;
+         
+          
       }
-
+      
+    
       .box-favoritos{
         text-align: center;
         width: 80%;
         max-width: 720px;
       justify-content: center;
-        color: white;
+        color: #003249;
         font-size: 20px;
         margin: 50px auto;
         padding: 1.3em;
-        background:#79d3e6;
+        background:#80CED7;
+        border-radius: .75em;
+        -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        box-shadow: 
+        0 2px 2px #9AD1D4,
+        0 0px 5px #9AD1D4,
+        0 0px 4px #9AD1D4,
+        0 5px 20px #9AD1D4,
+        inset 0 0 15px #9AD1D4;
+      }
+
+      .body-favoritos a {
+          text-decoration: none;
+          color:#003249;
+          font-weight: 800;
+          
+      }
+
+      .body-favoritos button {
+        text-align: center;
+        width: 20%;
+        max-width: 720px;
+      justify-content: center;
+        color: #003249;
+        font-size: 20px;
+        margin: 10px auto;
+      background:#9AD1D4;
+        border-radius: .75em;
+        -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        box-shadow: 
+        0 2px 2px white,
+        0 0px 5px white,
+        0 0px 4px white,
+        0 5px 20px white,
+        inset 0 0 15px white;
+        
+      }
+      .box-select-market{
+         
+        text-align: center;
+        width: 20%;
+        max-width: 420px;
+      justify-content: center;
+        color: #003249;
+        font-size: 20px;
+        margin: 10px auto;
+      background:#9ad1d45d;
         border-radius: .75em;
         -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
@@ -384,22 +472,37 @@ nav {
         inset 0 0 15px white;
       }
 
-      .body-favoritos a {
-          text-decoration: none;
-          color:black;
-          
+      .body-coins{
+        
+        text-align: center;
+        width: 600px;
+       justify-content: center;
+        color: #003249;
+        font-size: 20px;
+        margin: 10px auto;
+      background:#CCDBDC;
+        border-radius: .75em;
+        -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+        box-shadow: 
+        0 2px 2px white,
+        0 0px 5px white,
+        0 0px 4px white,
+        0 5px 20px white,
+        inset 0 0 15px white;
+      }
+      .body-coins a {
+        text-decoration: none;
       }
 
-      .body-favoritos button {
+      .container {
         text-align: center;
-        width: 80%;
-        max-width: 720px;
-      justify-content: center;
-        color: white;
+        width: 600px;
+       justify-content: center;
+        color: #003249;
         font-size: 20px;
-        margin: 50px auto;
-        padding: 1.3em;
-        background:#79d3e6;
+        margin: 10px auto;
+      background:#CCDBDC;
         border-radius: .75em;
         -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
