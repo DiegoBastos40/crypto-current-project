@@ -1,8 +1,39 @@
-<h2>Posts</h2>
+<body class="body-favoritos">
 
-<ul>
-  {{#each posts}}
-    <li>{{title}} by: {{author.username}}</li>
-    <a href='/posts/{{_id}}'>Details</a>
-  {{/each}}
-</ul>
+<div class="posts-section">
+  <div class="create-posts-box">
+      <h2>Create a new post</h2>
+      <form action="/post-create" method="POST">
+        <label> Title:
+          <input type="text" name="title" />
+        </label>
+        <label> Content:
+          <textarea type="text" name="content"> </textarea>
+    </label>
+
+
+        <label for="author-select"> Created by:
+          <select name="author">
+            <option disable selected value=""></option>
+          {{#each dbUsers}}
+            <option value="{{this._id}}"> {{this.username}} </option>
+          {{/each}}
+          </select>
+        </label>
+        <button type="submit"> Create the post </button>
+      </form>
+  </div> 
+  <div class="post-box">
+      <h2>Posts</h2>
+      <div class="post-list">
+        {{#each posts}}
+          <div class="post-cards">
+            <h4>{{title}}</h4>
+            <p>{{author.username}}<p>
+            <a class="box-favoritos" href='/posts/{{_id}}'>Details</a>
+          </div>
+        {{/each}}
+      </div>
+  </div>
+</div>
+</body>

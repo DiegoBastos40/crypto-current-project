@@ -23,7 +23,8 @@ router.get('/post-create', (req, res) => {
 // <form action="/post-create" method="POST">
 
 router.post('/post-create', (req, res, next) => {
-  const { title, content, author } = req.body;
+  const author = req.session.user._id
+  const { title, content } = req.body;
 
   Post.create({ title, content, author })
     .then((dbPost) => {
@@ -38,6 +39,7 @@ router.post('/post-create', (req, res, next) => {
 // ****************************************************************************************
 
 router.get('/posts', (req, res, next) => {
+
   Post.find()
     .populate('author')
     .then((dbPosts) => {
