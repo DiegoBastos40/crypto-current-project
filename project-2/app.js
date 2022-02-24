@@ -43,6 +43,13 @@ const walletRoutes = require('./routes/wallet.routes');
 app.use('/',walletRoutes)
 
 
+const postRoutes = require("./routes/post.routes");
+app.use("/", postRoutes);
+
+const commentRoutes = require("./routes/comment.routes");
+app.use("/", commentRoutes);
+
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
