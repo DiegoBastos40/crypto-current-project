@@ -1,21 +1,21 @@
 
-
-
-<body class="body-coins">
- <div class="main-nav">
+<body class="body-favoritos">
+<div class="main-nav">
     <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
+     <a href="/graficos"> Coins on fire</a>
     <a href="/auth/logout"> Logout</a>
     <a href="/coins"> All coins</a>
     <a href="/auth/favoritos"> Your Wallet</a>
-     {{#if user}}
+ {{#if user}}
 {{user.username}}
 {{/if}}
 </div>
-<div class="box-coins">
-   <h1>All Market</h1>
+<div class="box-favoritos">
+<h1>All Market</h1>
 
 {{#each coins}}<br>
 <a href="/coins/{{symbol}}">{{name}}</a>
+
 <form action="/wallet/{{symbol}}" method="post">
 <button type="submit">Add to favorite</button>
 </form>
