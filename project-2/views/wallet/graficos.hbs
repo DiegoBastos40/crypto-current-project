@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+   
+</head>
+ <div class="main-nav">
+    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
+    <a href="/auth/logout"> Logout</a>
+    <a href="/coins"> All coins</a>
+    <a href="/auth/favoritos"> Your Wallet</a>
+     {{#if user}}
+{{user.username}}
+{{/if}}
+</div>
+<body>
+    <canvas id="myChart" width="400px" height="400px"></canvas>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    
+    <script>
+
+const apiUrl = `https://coinlib.io/api/v1/coinlist?key=0c7241950e572722`;
+let pricesArr = [];
+let volumeArr = [];
+let pricesData = pricesArr.slice(3,40);
+let volumeData = volumeArr.slice(3,40);
+
+        axios
+  .get(apiUrl)
+  .then(responseFromAPI => {
+    
+
+    return responseFromAPI.data.coins.forEach((coin, i) => {
+        if(i > 3 && i < 60 ){
+            pricesArr.push(coin.name);
+            volumeArr.push(coin.market_cap )
+        } 
+    })   
+   
+    //printTheChart(responseFromAPI.data); // <== call the function here where you used to console.log() the response
+   })
+   .then(() => {
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+             const myChart = new Chart(ctx, {
+
+
+            type: 'bar',
+            data: {
+                labels: pricesArr,
+                datasets: [{
+                    label: 'Market cap without the big ones',
+                    data: volumeArr,
+                    backgroundColor: [
+                        'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)',
+                      'rgb(0,78,100)',
+                        'rgb(0,165,207)',
+                        'rgb(159,255,203)',
+                        'rgb(37,161,142)',
+                     'rgb(122, 229, 130,)'
+                    ],
+                  
+                    borderWidth: 1
+                }]
+            },
+            options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero:true
+            }
+        }]
+    }
+}
+        });
+
+
+   })
+
+  .catch(err => console.log('Error while getting the data: ', err));
+       
+
+        </script>
+
+</body>
+</html>

@@ -5,11 +5,10 @@ const axios = require("axios");
 const router = require("express").Router();
 const Wallet = require("../models/Wallet.model");
 const User = require("../models/User.model");
-/* const  Binance  =require('node-binance-api') ; 
-const  binance  = new Binance().options ({ 
-  APIKEY:process.env.BINANCE_APIKEY,
-  APISECRET:process.env.BINANCE_APISECRET
-}) ; */
+const express = require('express');
+const app = express();
+const path = require('path');
+
 
 router.get("/coins", async (req, res, next) => {
   try {
@@ -36,6 +35,12 @@ router.get("/coins/:id", async (req, res, next) => {
     console.log("error occurred", e);
   }
 });
+
+router.get('/graficos',function(req,res){
+  res.render('wallet/graficos');
+});
+
+
 
 router.post("/wallet/:symbol", async (req, res, next) => {
   try {

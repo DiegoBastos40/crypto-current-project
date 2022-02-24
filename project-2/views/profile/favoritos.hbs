@@ -1,5 +1,15 @@
 <body class="body-favoritos">
-    
+
+<div class="main-nav">
+    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
+    <a href="/auth/logout"> Logout</a>
+    <a href="/coins"> All coins</a>
+    <a href="/auth/favoritos"> Your Wallet</a>
+     {{#if user}}
+{{user.username}}
+{{/if}}
+</div>
+
 <div class="box-favoritos">
 <h1>Your Wallet</h1>
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 * {
   font-family: 'Titillium Web', sans-serif;
@@ -369,14 +370,15 @@ nav {
       }
 
       #submit-btn{
+          display: flex;
+          justify-content: center;
         text-align: center;
-        width: 30%;
-        max-width: 200px;
+        width: 8%;
         color: #003249;
-        font-size: 20px;
-        margin: 20px auto;
-        padding: 1.3em;
-        background: #9AD1D4;
+        padding: 5px;
+        font-size: 16px;
+        margin: 10px auto;
+       background: #9AD1D4;
         border-radius: .75em;
         -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
         filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
@@ -494,6 +496,7 @@ nav {
       .body-coins a {
         text-decoration: none;
       }
+    
 
       .container {
         text-align: center;
@@ -512,4 +515,28 @@ nav {
         0 0px 4px white,
         0 5px 20px white,
         inset 0 0 15px white;
+      }
+
+      .main-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:flex-end;
+        align-items: center;
+        font-family: 'Oswald', sans-serif;
+        font-size: 18px;
+        gap: 1rem ;
+        
+      }
+      .main-nav > img {
+        width: 100px;
+      /* display: block;
+      margin-right: 900px; */
+      }
+
+      canvas{
+
+        width:100% !important;
+        height:700px !important;
+      
       }
