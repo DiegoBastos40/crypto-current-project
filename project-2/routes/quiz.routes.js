@@ -11,11 +11,6 @@ router.post("/profile", async (req, res) => {
   console.log(q_1, q_2, q_3);
   console.log(combination);
 
-
-  /*
-    preciso puchar a data da API para o dictionary
-     */
-
   const dictionary = {
     aaa: [
       "BTC",
@@ -268,9 +263,7 @@ router.post("/profile", async (req, res) => {
   );
   const coins = response.data.coins;
 
-
-
-  function apiCoinsValue(coinSymbolArr) {
+   function apiCoinsValue(coinSymbolArr) {
     let sugestionArray = [];
     for (let i = 0; i < coinSymbolArr.length; i++) {
         for (let y = 0; y < coins.length; y++){
@@ -292,38 +285,6 @@ router.post("/profile", async (req, res) => {
       userToChange.save();
     })
   );
-
-
-//   console.log("epa epa", apiCoinsValue([
-//     ,
-//     "XRP",
-//     "BTC",
-//     "ETH",
-//     "ADA",
-//     "USDC",
-//     "LUNA",
-//   ]))
-
-
-//   await Promise.all(
-//     userAnswer.map(async (val) => {
-//       let userToChange = await User.findById(user._id);
-//       userToChange.suggested = apiCoinsValue(val);
-//     //   userToChange.suggested.push(apiCoinsValue(val));
-//       userToChange.save();
-//     })
-//   );
-
-//   await Promise.all(
-//     userAnswer.map(async (val) => {
-//       let userToChange = await User.findById(user._id);
-//       userToChange.suggested = apiCoinsValue(val);
-//     //   userToChange.suggested.push(apiCoinsValue(val));
-//       userToChange.save();
-//     })
-//   );
-
-
   setTimeout(() => {
     res.redirect("/auth/favoritos");
   }, 50);

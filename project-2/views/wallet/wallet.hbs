@@ -1,49 +1,42 @@
-
 <body class="body-favoritos">
-<div class="main-nav">
-    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
-     <a href="/graficos"> Coins on fire</a>
+  <div class="main-nav">
+    <img
+      src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png"
+    />
+    <a href="/graficos"> Coins on fire</a>
     <a href="/auth/logout"> Logout</a>
     <a href="/coins"> All coins</a>
     <a href="/auth/favoritos"> Your Wallet</a>
-  <a href="/posts"> Chat Room</a>
- {{#if user}}
-{{user.username}}
-{{/if}}
-</div>
-<div class="box-favoritos">
-<h1>All Coins</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Coin</th>
-      <th>Price</th>
-    </tr>
-  </thead>
+    <a href="/posts"> Chat Room</a>
+    {{#if user}}
+      {{user.username}}
+    {{/if}}
+  </div>
+  <div class="box-favoritos">
+    <h1>All Coins</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Coin</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each coins}}
+          <tr>
+            <td>{{rank}}</td>
+            <td><a href="/coins/{{symbol}}">{{name}}</a></td>
+            <td>{{decimalsFixed price}}</td>
+            <td><form action="/wallet/{{symbol}}" method="post">
+                <button class="button-wallet" type="submit">Add to favorite</button>
+              </form>
+            </td>
+          </tr>
 
-  {{! <ul class="list-style">
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Instagram</a></li>
-    </ul> }}
+        {{/each}}
+      </tbody>
+    </table>
 
-  <tbody>
-    {{#each coins}}
-      <tr>
-        <td>{{rank}}</td>
-        <td><a href="/coins/{{symbol}}">{{name}}</a></td>
-        <td>{{decimalsFixed price}}</td>
-        <td><form action="/wallet/{{symbol}}" method="post">
-            <button class="button-wallet" type="submit">Add to favorite</button>
-          </form>
-        </td>
-      </tr>
-
-    {{/each}}
-  </tbody>
-</table>
-
-</div>
+  </div>
 </body>
-

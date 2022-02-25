@@ -1,7 +1,16 @@
 <body class="body-login">
-   
-
-<div class="login-box">
+     <div class="main-nav">
+    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
+    <a href="/auth/logout"> Logout</a>
+    <a href="/auth/login"> Login</a>
+    <a href="/auth/signup"> Signup</a>
+    <a href="/coins"> All coins</a>
+    <a href="/posts"> Chat Room</a>
+     {{#if user}}
+{{user.username}}
+{{/if}}
+</div>
+   <div class="login-box">
   <h2>Signup</h2>
   <form action="/auth/signup" method="POST">
     <div class="user-box">

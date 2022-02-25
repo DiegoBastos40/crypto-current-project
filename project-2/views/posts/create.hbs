@@ -1,32 +1,35 @@
 <body class="body-favoritos">
-    
-<h2>Create a new post</h2>
 
-<form action="/post-create" method="POST">
-  <label> Title:
-    <input type="text" name="title" />
-  </label>
-  <br>
-  <br>
+  <h2>Create a new post</h2>
 
-  <label> Content:
-    <textarea type="text" name="content"> </textarea>
-  </label>
-  <br>
-  <br>
+  <form action="/post-create" method="POST">
+    <label>
+      Title:
+      <input type="text" name="title" />
+    </label>
+    <br />
+    <br />
 
-  <label for="author-select"> Created by:
-    <select name="author">
-      <option disable selected value=""></option>
-      {{#each dbUsers}}
-        <option value="{{this._id}}"> {{this.username}} </option>
-      {{/each}}
-    </select>
-  </label>
-  <br>
-  <br>
+    <label>
+      Content:
+      <textarea type="text" name="content"> </textarea>
+    </label>
+    <br />
+    <br />
 
-  <button type="submit"> Create the post </button>
-</form>
+    <label for="author-select">
+      Created by:
+      <select name="author">
+        <option disable selected value=""></option>
+        {{#each dbUsers}}
+          <option value="{{this._id}}"> {{this.username}} </option>
+        {{/each}}
+      </select>
+    </label>
+    <br />
+    <br />
 
-</body> 
+    <button type="submit"> Create the post </button>
+  </form>
+
+</body>

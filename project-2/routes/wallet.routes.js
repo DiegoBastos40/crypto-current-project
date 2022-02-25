@@ -1,14 +1,11 @@
 require("dotenv").config();
 const axios = require("axios");
-// const Coinlib = require ('coinlib-api') ;
-// const CoinlibClient = new Coinlib('a082867c6cfecc56') ;
 const router = require("express").Router();
 const Wallet = require("../models/Wallet.model");
 const User = require("../models/User.model");
 const express = require('express');
 const app = express();
 const path = require('path');
-
 
 router.get("/coins", async (req, res, next) => {
   try {
@@ -39,8 +36,6 @@ router.get("/coins/:id", async (req, res, next) => {
 router.get('/graficos',function(req,res){
   res.render('wallet/graficos');
 });
-
-
 
 router.post("/wallet/:theSymbol", async (req, res, next) => {
   try {
@@ -78,25 +73,6 @@ router.post("/wallet/:symbol/delete", async (req, res, next) => {
     const symbol = req.params.symbol;
     const user = req.session.user;
 
-    // await User.findByIdAndUpdate(user._id, {
-    //   $pull: {suggested: {symbol: symbol}}
-    // }, {new: true})
-    
-
-    // const response = await axios.get(
-    //   `https://coinlib.io/api/v1/coin?key=d996a4fc60938e2e&symbol=${symbol}`
-    // );
-    // const coin = response.data;
-    
-    // let userToChange = await User.findByIdAndUpdate(user._id);
-    // for(let i = 0; i < userToChange.suggested.length; i++){
-    //   if ( userToChange.suggested.symbol[i] == symbol){
-    //     // userToChange.suggested.splice(i, 1);
-    //     console.log("epa: ", userToChange.suggested[i])
-    //   }
-    // }
-    // userToChange.save()
-
     let userToChange = await User.findById(user._id);
     for(let i = 0; i < userToChange.suggested.length; i++){
       if ( userToChange.suggested[i].symbol === symbol){
@@ -111,17 +87,5 @@ router.post("/wallet/:symbol/delete", async (req, res, next) => {
     console.log("error occurred", e);
   }
 });
-
-// router.post("/wallet/:symbol/delete",  (req, res, next) => {
-//   const id = req.session.user;
-//   const symbol = req.params.symbol;
-//   User.findByIdAndUpdate(id, {$pull: {suggested: symbol}})
-//   .then(()=>{
-
-//     res.redirect("/auth/favoritos");
-
-//   })
-//   .catch((err)=>next(err));
-// })
 
 module.exports = router;

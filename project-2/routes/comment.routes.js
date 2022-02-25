@@ -4,10 +4,6 @@ const User = require('../models/User.model');
 const Post = require('../models/Post.model');
 const Comment = require('../models/Comment.model');
 
-// ****************************************************************************************
-// POST route - create a comment of a specific post
-// ****************************************************************************************
-
 router.post('/posts/:id/comment', (req, res, next) => {
   const { id } = req.params;
   const { author, content } = req.body;

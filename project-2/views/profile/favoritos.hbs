@@ -1,49 +1,46 @@
 <body class="body-favoritos">
 
-<div class="main-nav">
-    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
-     <a href="/graficos"> Coins on fire</a>
+  <div class="main-nav">
+    <img
+      src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png"
+    />
+    <a href="/graficos"> Coins on fire</a>
     <a href="/auth/logout"> Logout</a>
     <a href="/coins"> All coins</a>
     <a href="/auth/favoritos"> Your Wallet</a>
-     <a href="/posts"> Chat Room</a>
-     {{#if user}}
-{{user.username}}
-{{/if}}
-</div>
+    <a href="/posts"> Chat Room</a>
+    {{#if user}}
+      {{user.username}}
+    {{/if}}
+  </div>
 
- <div class="box-favoritos">
+  <div class="box-favoritos">
     <h1>Your Wallet</h1>
-    
-     <table >
-            <thead>
-              <tr>
-                <th>Coin</th>
-              </tr>
-               
-            </thead>
-           
-    
-    {{#each userInSession.suggested}}
-    {{!-- <p>{{this}}</p> --}}
-    
-     <tr>
-    <td><a href="/coins/{{this.symbol}}">{{this.name}}</a></td>
-                <td><form action="/wallet/{{this.symbol}}/delete" method="post">
-    <button class="button-wallet" type="submit">Delete</button>
-    </form> 
-    
-    </td>
-    
-     </tr>
-    
-    {{/each}}
-    
-    
+    <table>
+      <thead>
+        <tr>
+          <th>Coin</th>
+        </tr>
+
+      </thead>
+
+      {{#each userInSession.suggested}}
+        <tr>
+          <td><a href="/coins/{{this.symbol}}">{{this.name}}</a></td>
+          <td><form action="/wallet/{{this.symbol}}/delete" method="post">
+              <button class="button-wallet" type="submit">Delete</button>
+            </form>
+
+          </td>
+
+        </tr>
+
+      {{/each}}
+
     </table>
-    </div>
-    <div class="box-select-market">
+  </div>
+  <div class="box-select-market">
     <a href="/coins/"> Select your favorites Coins</a>
-    </div>
-    
-    </body>
+  </div>
+
+</body>

@@ -419,15 +419,9 @@ button :hover {
   border-radius: 0.75em;
   -webkit-filter: drop-shadow(1px 2px 5px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(1px 2px 5px rgba(0, 0, 0, 0.3));
-  
-  /* box-shadow: 
-        0 2px 2px white,
-        0 0px 5px white,
-        0 0px 4px white,
-        0 5px 20px white,
-        inset 0 0 15px white; */
+
 }
-.button-wallet{
+.button-wallet {
   min-width: fit-content;
 }
 .box-select-market {
@@ -446,7 +440,7 @@ button :hover {
   box-shadow: 0 2px 2px white, 0 0px 5px white, 0 0px 4px white,
     0 5px 20px white, inset 0 0 15px white;
 }
-/* alterado */
+
 .body-coins {
   display: flex;
   text-align: center;
@@ -456,7 +450,6 @@ button :hover {
   justify-content: center;
   color: #003249;
   font-size: 20px;
-  /* margin: 10px auto; */
   margin: 0 auto;
   background: #ccdbdc;
   border-radius: 0.75em;
@@ -468,7 +461,7 @@ button :hover {
 .body-coins a {
   text-decoration: none;
 }
-/* alterado */
+
 table {
   border-collapse: collapse;
 }
@@ -481,7 +474,7 @@ tr {
 td {
   padding: 10px;
 }
-/*  */
+
 
 .container {
   text-align: center;
@@ -535,8 +528,9 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  border: black 1px solid;}
- 
+  border: black 1px solid;
+}
+
 .box-select-market {
   text-decoration: none;
   text-align: center;
@@ -602,8 +596,6 @@ canvas {
 }
 .main-nav > img {
   width: 100px;
-  /* display: block;
-      margin-right: 900px; */
   position: absolute;
   top: 5px;
   left: 5px;
@@ -620,9 +612,9 @@ canvas {
   background-color: #ccdbdc;
 }
 .posts-section button {
-    font-size: 15px;
-    width: 110px;
-    height: 40px;
+  font-size: 15px;
+  width: 110px;
+  height: 40px;
 }
 .create-post-form {
   display: flex;
@@ -630,8 +622,8 @@ canvas {
   justify-content: center;
   align-items: flex-end;
   border: black 2px solid;
-  }
-.create-post-form input{
+}
+.create-post-form input {
   width: 300px;
 }
 .create-post-form textarea {
@@ -641,14 +633,11 @@ canvas {
 .post-box {
   width: 50%;
   margin: 0 auto;
-  
 }
 
 .post-cards {
   border: black 2px solid;
   border-radius: 1.4em;
   padding: 0.4em;
-  margin-top:10px;
+  margin-top: 10px;
 }
-
-

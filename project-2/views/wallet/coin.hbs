@@ -1,34 +1,34 @@
 <div class="main-nav">
-    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
-     <a href="/graficos"> Coins on fire</a>
-    <a href="/auth/logout"> Logout</a>
-    <a href="/coins"> All coins</a>
-    <a href="/auth/favoritos"> Your Wallet</a>
-     <a href="/posts"> Chat Room</a>
-     {{#if user}}
-{{user.username}}
-{{/if}}
+  <img
+    src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png"
+  />
+  <a href="/graficos"> Coins on fire</a>
+  <a href="/auth/logout"> Logout</a>
+  <a href="/coins"> All coins</a>
+  <a href="/auth/favoritos"> Your Wallet</a>
+  <a href="/posts"> Chat Room</a>
+  {{#if user}}
+    {{user.username}}
+  {{/if}}
 </div>
 <div class="container">
-<h3>{{coin.name}}</h3>
-<p><b>{{coin.show_symbol}}</b></p>
-<p> rank: {{coin.rank}}</p>
-<p> Price: $: {{coin.markets.0.price}} $</p>
-<p>Market Cap: $:    {{coin.market_cap}} $</p>
-<p>Volume 24h:{{coin.total_volume_24h}} Unit</p>
-<p>lower point 24h: {{coin.low_24h}} Unit</p>
-<p>higher point 24h: {{coin.high_24h}} Unit</p>
-<p>Delta 1h:{{coin.delta_1h}} Unit</p>
-<p>Delta 24h:{{coin.delta_24h}} Unit</p>
-<p>Delta 7d:{{coin.delta_7d}} Unit</p>
-<p>Delta 30d:{{coin.delta_30d}} Unit</p>
+  <h3>{{coin.name}}</h3>
+  <p><b>{{coin.show_symbol}}</b></p>
+  <p> rank: {{coin.rank}}</p>
+  <p> Price: $: {{coin.markets.0.price}} $</p>
+  <p>Market Cap: $: {{coin.market_cap}} $</p>
+  <p>Volume 24h:{{coin.total_volume_24h}} Unit</p>
+  <p>lower point 24h: {{coin.low_24h}} Unit</p>
+  <p>higher point 24h: {{coin.high_24h}} Unit</p>
+  <p>Delta 1h:{{coin.delta_1h}} Unit</p>
+  <p>Delta 24h:{{coin.delta_24h}} Unit</p>
+  <p>Delta 7d:{{coin.delta_7d}} Unit</p>
+  <p>Delta 30d:{{coin.delta_30d}} Unit</p>
 
-<div class="buttom">
+  <div class="buttom">
 
-<form action="/wallet/{{coin.symbol}}" method="post">
-<button type="submit">Add to favorite</button>
-</form>  
+    <form action="/wallet/{{coin.symbol}}" method="post">
+      <button type="submit">Add to favorite</button>
+    </form>
+  </div>
 </div>
-</div>
-
-

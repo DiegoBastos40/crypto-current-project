@@ -1,45 +1,47 @@
 <body class="body-favoritos">
-    <div class="main-nav">
-    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
-     <a href="/graficos"> Coins on fire</a>
+  <div class="main-nav">
+    <img
+      src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png"
+    />
+    <a href="/graficos"> Coins on fire</a>
     <a href="/auth/logout"> Logout</a>
     <a href="/coins"> All coins</a>
     <a href="/auth/favoritos"> Your Wallet</a>
-     <a href="/posts"> Chat Room</a>
-     {{#if user}}
-{{user.username}}
-{{/if}}
-</div>
-<h2>Private Post</h2>
+    <a href="/posts"> Chat Room</a>
+    {{#if user}}
+      {{user.username}}
+    {{/if}}
+  </div>
+  <h2>Private Post</h2>
 
-<h2>{{title}}</h2>
+  <h2>{{title}}</h2>
 
-<div>
-  {{content}}
-  <br />
-  -by :
-  {{author.username}}
-</div>
+  <div>
+    {{content}}
+    <br />
+    -by :
+    {{author.username}}
+  </div>
 
-{{#unless comments}}
-  <p>No comments yet!</p>
-{{/unless}}
+  {{#unless comments}}
+    <p>No comments yet!</p>
+  {{/unless}}
 
-{{#each comments}}
-  <p><b>{{author.username}}:</b> {{content}}</p>
-{{/each}}
+  {{#each comments}}
+    <p><b>{{author.username}}:</b> {{content}}</p>
+  {{/each}}
 
-<p>Git demo</p>
-<hr />
+  <p>Git demo</p>
+  <hr />
 
-<form action='/posts/{{_id}}/comment' method='post'>
-  <label for='author'>Username</label>
-  <input type='text' name='author' />
+  <form action="/posts/{{_id}}/comment" method="post">
+    <label for="author">Username</label>
+    <input type="text" name="author" />
 
-  <textarea name='content' cols='30' rows='2'></textarea>
+    <textarea name="content" cols="30" rows="2"></textarea>
 
-  <input type='text' name='postAuthor' value={{author.username}} hidden />
-  <button type='submit'>Create Comment</button>
-</form>
+    <input type="text" name="postAuthor" value={{author.username}} hidden />
+    <button type="submit">Create Comment</button>
+  </form>
 
 </body>
