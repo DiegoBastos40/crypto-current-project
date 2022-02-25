@@ -29,6 +29,14 @@ app.use(function (req, res, next) {
 
 app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 
+
+//Handlebar Helper
+
+hbs.registerHelper('decimalsFixed', function(price) {
+  return Number(price).toFixed(2);
+});
+
+
 // 👇 Start handling routes here
 const index = require("./routes/index");
 app.use("/", index);
@@ -54,3 +62,8 @@ app.use("/", commentRoutes);
 require("./error-handling")(app);
 
 module.exports = app;
+
+
+
+///////////////////
+

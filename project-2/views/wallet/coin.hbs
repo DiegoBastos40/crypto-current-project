@@ -12,19 +12,18 @@
 <div class="container">
 <h3>{{coin.name}}</h3>
 <p><b>{{coin.show_symbol}}</b></p>
-<p> rank:{{coin.rank}}</p>
-<p> price: $: {{coin.markets.0.price}} </p>
-<p>market_cap: $:    {{coin.market_cap}}</p>
-<p>total_volume_24h:{{coin.total_volume_24h}} Unit</p>
-<p>low_24h:{{coin.low_24h}} Unit</p>
-<p>high_24h:{{coin.high_24h}} Unit</p>
-<p>delta_1h:{{coin.delta_1h}} Unit</p>
-<p>delta_24h:{{coin.delta_24h}} Unit</p>
-<p>delta_7d:{{coin.delta_7d}} Unit</p>
-<p>delta_30d:{{coin.delta_30d}} Unit</p>
+<p> rank: {{coin.rank}}</p>
+<p> Price: $: {{coin.markets.0.price}} $</p>
+<p>Market Cap: $:    {{coin.market_cap}} $</p>
+<p>Volume 24h:{{coin.total_volume_24h}} Unit</p>
+<p>lower point 24h: {{coin.low_24h}} Unit</p>
+<p>higher point 24h: {{coin.high_24h}} Unit</p>
+<p>Delta 1h:{{coin.delta_1h}} Unit</p>
+<p>Delta 24h:{{coin.delta_24h}} Unit</p>
+<p>Delta 7d:{{coin.delta_7d}} Unit</p>
+<p>Delta 30d:{{coin.delta_30d}} Unit</p>
 
 <div class="buttom">
-<a href="/wallet/{{coin.symbol}}/edit">Edit</a>
 
 <form action="/wallet/{{coin.symbol}}" method="post">
 <button type="submit">Add to favorite</button>

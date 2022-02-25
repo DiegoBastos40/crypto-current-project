@@ -12,22 +12,38 @@
 {{/if}}
 </div>
 
-<div class="box-favoritos">
-<h1>Your Wallet</h1>
-
-{{#each userInSession.suggested}}
-{{!-- <p>{{this}}</p> --}}
-<a href="/coins/{{this.symbol}}">{{this.name}}<br></a>
-
-<form action="/wallet/{{this.symbol}}/delete" method="post">
-<button type="submit">Delete</button>
-</form> 
-
-{{/each}}
-<br>
-</div>
-<div class="box-select-market">
-<a href="/coins/"> Select your favorites Coins</a>
-</div>
-
-</body>
+ <div class="box-favoritos">
+    <h1>Your Wallet</h1>
+    
+     <table >
+            <thead>
+              <tr>
+                <th>Coin</th>
+              </tr>
+               
+            </thead>
+           
+    
+    {{#each userInSession.suggested}}
+    {{!-- <p>{{this}}</p> --}}
+    
+     <tr>
+    <td><a href="/coins/{{this.symbol}}">{{this.name}}</a></td>
+                <td><form action="/wallet/{{this.symbol}}/delete" method="post">
+    <button class="button-wallet" type="submit">Delete</button>
+    </form> 
+    
+    </td>
+    
+     </tr>
+    
+    {{/each}}
+    
+    
+    </table>
+    </div>
+    <div class="box-select-market">
+    <a href="/coins/"> Select your favorites Coins</a>
+    </div>
+    
+    </body>

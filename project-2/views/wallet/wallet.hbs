@@ -12,16 +12,38 @@
 {{/if}}
 </div>
 <div class="box-favoritos">
-<h1>All Market</h1>
+<h1>All Coins</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Coin</th>
+      <th>Price</th>
+    </tr>
+  </thead>
 
-{{#each coins}}<br>
-<a href="/coins/{{symbol}}">{{name}}</a>
+  {{! <ul class="list-style">
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Instagram</a></li>
+    </ul> }}
 
-<form action="/wallet/{{symbol}}" method="post">
-<button type="submit">Add to favorite</button>
-</form>
-<br>
-{{/each}}
+  <tbody>
+    {{#each coins}}
+      <tr>
+        <td>{{rank}}</td>
+        <td><a href="/coins/{{symbol}}">{{name}}</a></td>
+        <td>{{decimalsFixed price}}</td>
+        <td><form action="/wallet/{{symbol}}" method="post">
+            <button class="button-wallet" type="submit">Add to favorite</button>
+          </form>
+        </td>
+      </tr>
+
+    {{/each}}
+  </tbody>
+</table>
+
 </div>
 </body>
 

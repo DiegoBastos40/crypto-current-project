@@ -42,25 +42,28 @@ router.get('/graficos',function(req,res){
 
 
 
-router.post("/wallet/:symbol", async (req, res, next) => {
+router.post("/wallet/:theSymbol", async (req, res, next) => {
   try {
-    const symbol = req.params.symbol;
-    console.log("symbol", symbol);
+    const theSymbol = req.params.theSymbol;
+    console.log("symbol", theSymbol);
     const response = await axios.get(
-      `https://coinlib.io/api/v1/coin?key=d996a4fc60938e2e&symbol=${symbol}`
+      `https://coinlib.io/api/v1/coin?key=bea89b3b21612ab2&symbol=${theSymbol}`
     );
     const coin = response.data;
     const user = req.session.user;
-    let userToChange = await User.findById(user._id);
-//     const exist = userToChange.suggestion.filter(
-//           ({ symbol }) => symbol.some(
-//             ({ value }) => value.includes(symbol)
-//           ))
-// if  (exist){
-//   userToChange.suggested.push(coin);
-// }
-userToChange.suggested.push(coin);
 
+    let userToChange = await User.findById(user._id);
+    let exist = false;
+
+    userToChange.suggested.forEach(coin => {
+      if(coin.symbol == theSymbol) {
+        exist = true
+      }
+    })
+        
+    if (!exist) {
+      userToChange.suggested.push(coin);
+    }
 
     userToChange.save();
 
