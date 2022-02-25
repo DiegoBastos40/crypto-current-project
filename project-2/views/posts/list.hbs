@@ -1,3 +1,16 @@
+<body class="body-favoritos">
+    <div class="main-nav">
+    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
+     <a href="/graficos"> Coins on fire</a>
+    <a href="/auth/logout"> Logout</a>
+    <a href="/coins"> All coins</a>
+    <a href="/auth/favoritos"> Your Wallet</a>
+     <a href="/posts"> Chat Room</a>
+     {{#if user}}
+{{user.username}}
+{{/if}}
+</div>
+
 <div class="posts-section">
   <div class="create-posts-box">
       <h2>Create a new post</h2>
@@ -8,7 +21,7 @@
         <label> Content:
           <textarea type="text" name="content"> </textarea>
         </label>
-        <button type="submit"> Create the post </button>
+        <button type="submit" class="button-comments"> Create post </button>
       </form>
   </div>
         

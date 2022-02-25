@@ -1,4 +1,15 @@
 <body class="body-favoritos">
+    <div class="main-nav">
+    <img src="/images/199-1995671_axolotl-png-6-png-image-transparent-axolotl.png">
+     <a href="/graficos"> Coins on fire</a>
+    <a href="/auth/logout"> Logout</a>
+    <a href="/coins"> All coins</a>
+    <a href="/auth/favoritos"> Your Wallet</a>
+     <a href="/posts"> Chat Room</a>
+     {{#if user}}
+{{user.username}}
+{{/if}}
+</div>
 <h2>Private Post</h2>
 
 <h2>{{title}}</h2>

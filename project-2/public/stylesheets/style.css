@@ -619,12 +619,17 @@ canvas {
   align-items: flex-start;
   background-color: #ccdbdc;
 }
+.posts-section button {
+    font-size: 15px;
+    width: 110px;
+    height: 40px;
+}
 .create-post-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  border: black 1px solid;
+  border: black 2px solid;
   }
 .create-post-form input{
   width: 300px;
@@ -640,9 +645,10 @@ canvas {
 }
 
 .post-cards {
-  border: black 1px solid;
+  border: black 2px solid;
   border-radius: 1.4em;
   padding: 0.4em;
   margin-top:10px;
 }
+
 
