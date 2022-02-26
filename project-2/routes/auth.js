@@ -18,11 +18,21 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get('/profile', (req, res,next) => {
   res.render('profile/profile', { userInSession: req.session.user });
+  if (!username) {
+    return res
+      .status(400)
+      .render("auth/signup", { errorMessage: "Please provide your username." });
+  }
 });
 router.get('/favoritos', async(req, res,next) => {
   req.session.user = await User.findById(req.session.user._id); 
   // console.log(req.session.user)
   res.render('profile/favoritos', { userInSession: req.session.user });
+  if (!username) {
+    return res
+      .status(400)
+      .render("auth/signup", { errorMessage: "Please provide your username." });
+  }
 });
 
 router.post('/favoritos', (req, res,next) => {
